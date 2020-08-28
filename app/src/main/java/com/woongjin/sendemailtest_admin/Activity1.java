@@ -164,6 +164,8 @@ public class Activity1 extends AppCompatActivity implements View.OnClickListener
 
 
 
+    //Joanthan 200828 커밋
+
 
 
     public void getContractHist()
