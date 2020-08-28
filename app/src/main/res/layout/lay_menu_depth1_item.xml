@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Menu 1Depth -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_menu_1depth_layout"
+    style="@style/StyleMenu1DepthLayout"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    >
+
+    <ImageView
+        android:id="@+id/iv_menu_depth1"
+        style="@style/StyleMenu1DepthImageView" />
+
+    <TextView
+        android:id="@+id/tv_menu_depth1_name"
+        style="@style/StyleMenu1DepthTextView"/>
+
+
+</RelativeLayout>
+

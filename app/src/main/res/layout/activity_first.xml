@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity3">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/tv_cont_no"
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:gravity="center_vertical"
+                    android:text=""/>
+
+
+
+                <TextView
+                    android:id="@+id/tv_cont_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text=""/>
+
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:gravity="center_vertical"
+                    android:text="Email :"/>
+
+
+
+                <EditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="20dp"/>
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:layout_marginTop="50dp"
+                android:orientation="horizontal">
+
+
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:gravity="center_vertical"
+                    android:textSize="11sp"
+                    android:text="계약기간 from :"/>
+
+
+
+                <EditText
+                    android:id="@+id/et_from_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:inputType="text"
+                    android:text="2019.12.01"
+                    android:layout_marginLeft="20dp"/>
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:gravity="center_vertical"
+                    android:textSize="11sp"
+                    android:text="계약기간 to :"/>
+
+
+
+                <EditText
+                    android:id="@+id/et_to_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:inputType="text"
+                    android:text="2019.12.31"
+                    android:layout_marginLeft="20dp"/>
+
+
+            </LinearLayout>
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:layout_marginTop="50dp"
+                android:orientation="horizontal">
+
+
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:gravity="center_vertical"
+                    android:text="사업자명 :"/>
+
+
+
+                <EditText
+                    android:id="@+id/et_bnm"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="(주) 페이펀"
+                    android:layout_marginLeft="20dp"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:gravity="center_vertical"
+                    android:text="사업자번호 :"/>
+
+
+
+                <EditText
+                    android:id="@+id/et_bn"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="1258627961"
+                    android:layout_marginLeft="20dp"/>
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:gravity="center_vertical"
+                    android:text="사업자 대표 :"/>
+
+
+
+                <EditText
+                    android:id="@+id/et_bceo"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="한용일"
+                    android:layout_marginLeft="20dp"/>
+
+
+            </LinearLayout>
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:layout_marginTop="50dp"
+                android:orientation="horizontal">
+
+
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:gravity="center_vertical"
+                    android:text="근로자 이름 :"/>
+
+
+
+                <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="이재욱"
+                    android:layout_marginLeft="20dp"/>
+
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:gravity="center_vertical"
+                    android:text="근로자 전화번호 :"/>
+
+
+
+                <EditText
+                    android:id="@+id/et_tel"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:inputType="numberDecimal"
+                    android:maxLength="11"
+                    android:text="0104343434"
+                    android:layout_marginLeft="20dp"/>
+
+
+            </LinearLayout>
+
+
+
+
+
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:gravity="center_vertical"
+                    android:text="주민번호 :"/>
+
+
+
+                <EditText
+                    android:id="@+id/et_jumin"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:inputType="numberDecimal"
+                    android:maxLength="13"
+                    android:layout_marginLeft="20dp"/>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:gravity="center_vertical"
+                    android:text="근로장소 :"/>
+
+
+
+                <EditText
+                    android:id="@+id/et_loc"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="한섬물류센터"
+                    android:layout_marginLeft="20dp"/>
+
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:gravity="center_vertical"
+                    android:text="작업복 미반납 비용 :"/>
+
+
+
+                <EditText
+                    android:id="@+id/et_minp"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="6000"
+                    android:layout_marginLeft="20dp"/>
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:gravity="center_vertical"
+                    android:text="중식비 :"/>
+
+
+
+                <EditText
+                    android:id="@+id/et_lunch"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="5000"
+                    android:layout_marginLeft="20dp"/>
+
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:id="@+id/ll_daily"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="60dp"
+                        android:gravity="center_vertical"
+                        android:text="시급 :"/>
+
+
+
+                    <EditText
+                        android:id="@+id/et_hpay"
+                        android:layout_width="150dp"
+                        android:layout_height="60dp"
+                        android:inputType="numberDecimal"
+                        android:text="6800"
+                        android:layout_marginLeft="20dp"/>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="*"/>
+
+
+                    <EditText
+                        android:id="@+id/et_hour"
+                        android:layout_width="80dp"
+                        android:layout_height="60dp"
+                        android:inputType="numberDecimal"
+                        android:layout_marginLeft="5dp"
+                        android:text="8"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="시간"/>
+
+
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="60dp"
+                        android:gravity="center_vertical"
+                        android:text="일급 :"/>
+
+
+
+                    <EditText
+                        android:id="@+id/et_dpay"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="12300"
+                        android:layout_marginLeft="20dp"/>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+            <LinearLayout
+                android:id="@+id/ll_month"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="60dp"
+                        android:gravity="center_vertical"
+                        android:text="수습기간 퍼센트 :"/>
+
+
+
+                    <EditText
+                        android:id="@+id/et_susp_pt"
+                        android:layout_width="100dp"
+                        android:layout_height="60dp"
+                        android:text="10"
+                        android:layout_marginLeft="20dp"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:gravity="center_vertical"
+                        android:text="%"/>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="60dp"
+                        android:gravity="center_vertical"
+                        android:text="월급 :"/>
+
+
+
+                    <EditText
+                        android:id="@+id/et_mmpay"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="1870000"
+                        android:layout_marginLeft="20dp"/>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:id="@+id/agreeLayout_daily"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical" >
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/my_custom_background"
+                android:weightSum="4"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="임금구성내역"
+                    android:textColor="@color/black"
+                    android:background="@drawable/my_custom_background"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="기본일당"
+                    android:textColor="@color/black"
+                    android:background="@drawable/my_custom_background"/>
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="주휴수당 및 지수당(발생시 지급)"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/my_custom_background"/>
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="비고"
+                    android:textColor="@color/black"
+                    android:background="@drawable/my_custom_background"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/my_custom_background"
+                android:weightSum="4"
+
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="근로시간 비율"
+                    android:textColor="@color/black"
+                    android:background="@drawable/my_custom_background"/>
+
+                <EditText
+                    android:id="@+id/et_BD_RAT"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="8.1"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/my_custom_background"/>
+
+
+                <EditText
+                    android:id="@+id/et_WL_RAT"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1.9"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/my_custom_background"/>
+
+
+                <EditText
+                    android:id="@+id/et_REMARK1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="당해연도 최저임금"
+                    android:background="@drawable/my_custom_background"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/my_custom_background"
+                android:weightSum="4"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="금액"
+                    android:textColor="@color/black"
+                    android:background="@drawable/my_custom_background"/>
+
+                <EditText
+                    android:id="@+id/et_BD_PAY"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="66,800"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/my_custom_background"/>
+
+
+                <EditText
+                    android:id="@+id/et_WL_PAY"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="23,200"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/my_custom_background"/>
+
+
+                <EditText
+                    android:id="@+id/et_REMARK2"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="8,350원"
+                    android:background="@drawable/my_custom_background"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/agreeLayout_month"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical" >
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/my_custom_background"
+                android:weightSum="4"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="임금구성내역"
+                    android:textColor="@color/black"
+                    android:background="@drawable/my_custom_background"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="기본급 "
+                    android:textColor="@color/black"
+                    android:background="@drawable/my_custom_background"/>
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="연차수당"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/my_custom_background"/>
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="비고"
+                    android:textColor="@color/black"
+                    android:background="@drawable/my_custom_background"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/my_custom_background"
+                android:weightSum="4"
+
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="근로시간"
+                    android:textColor="@color/black"
+                    android:background="@drawable/my_custom_background"/>
+
+                <EditText
+                    android:id="@+id/et_B_W_T_PLACE"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="209"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/my_custom_background"/>
+
+
+                <EditText
+                    android:id="@+id/et_B_H_T_PLACE"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="8"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/my_custom_background"/>
+
+
+                <EditText
+                    android:id="@+id/et_REMARK1_month"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="당해연도 최저임금"
+                    android:background="@drawable/my_custom_background"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/my_custom_background"
+                android:weightSum="4"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="금액"
+                    android:textColor="@color/black"
+                    android:background="@drawable/my_custom_background"/>
+
+                <EditText
+                    android:id="@+id/et_B_W_P_PLACE"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text=""
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/my_custom_background"/>
+
+
+                <EditText
+                    android:id="@+id/et_B_H_P_PLACE"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text=""
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/my_custom_background"/>
+
+
+                <EditText
+                    android:id="@+id/et_REMARK2_month"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="8,350원"
+                    android:background="@drawable/my_custom_background"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="30dp"
+            android:text="next"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:layout_gravity="center"/>
+
+
+    </LinearLayout>
+
+
+</ScrollView>
