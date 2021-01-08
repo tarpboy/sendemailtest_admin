@@ -58,6 +58,12 @@ public class Activity3 extends AppCompatActivity {
 
 
 
+    //210108 Jonathan 근무시간 추가
+    EditText et_start_hour;
+    EditText et_start_min;
+    EditText et_end_hour;
+    EditText et_end_min;
+
     EditText et_hpay;
     EditText et_dpay;
 
@@ -149,6 +155,11 @@ public class Activity3 extends AppCompatActivity {
         et_bceo = (EditText)findViewById(R.id.et_bceo);
 
 
+        et_start_hour = (EditText)findViewById(R.id.et_start_hour);
+        et_start_min = (EditText)findViewById(R.id.et_start_min);
+        et_end_hour = (EditText)findViewById(R.id.et_end_hour);
+        et_end_min = (EditText)findViewById(R.id.et_end_min);
+
 
 
         //일급
@@ -234,6 +245,14 @@ public class Activity3 extends AppCompatActivity {
 
                 setData.put("GAP_PLACE", et_bnm.getText().toString() + "  " + et_bceo.getText().toString());
                 setData.put("WORK_P_PLACE", et_name.getText().toString());
+
+
+
+                //Jonathan 210108 근무시간 추가
+                setData.put("START_HOUR",   et_start_hour.getText().toString());
+                setData.put("START_MIN",   et_start_min.getText().toString());
+                setData.put("END_HOUR",   et_end_hour.getText().toString());
+                setData.put("END_MIN",   et_end_min.getText().toString());
 
 
 

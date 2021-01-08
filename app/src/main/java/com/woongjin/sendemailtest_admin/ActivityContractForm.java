@@ -144,6 +144,14 @@ public class ActivityContractForm extends AppCompatActivity {
 
 
 
+
+            //Joanthan 210108 근무시간 추가
+            html = html.replace("{START_HOUR}", contractdb.get("START_HOUR"));
+            html = html.replace("{START_MIN}", contractdb.get("START_MIN"));
+            html = html.replace("{END_HOUR}", contractdb.get("END_HOUR"));
+            html = html.replace("{END_MIN}", contractdb.get("END_MIN"));
+
+
             //일급
             if("CT0003".equals(mContractData.get("CONT_NO")))
             {

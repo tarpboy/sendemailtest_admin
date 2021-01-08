@@ -359,6 +359,84 @@
 
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:gravity="center_vertical"
+                    android:text="근무시간 :"/>
+
+
+
+                <EditText
+                    android:id="@+id/et_start_hour"
+                    android:layout_width="50dp"
+                    android:layout_height="60dp"
+                    android:text="09"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text=":"/>
+
+                <EditText
+                    android:id="@+id/et_start_min"
+                    android:layout_width="50dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:text="00"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="~"/>
+
+
+                <EditText
+                    android:id="@+id/et_end_hour"
+                    android:layout_width="50dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:text="18"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text=":"/>
+
+                <EditText
+                    android:id="@+id/et_end_min"
+                    android:layout_width="50dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:text="00"
+                    />
+
+
+            </LinearLayout>
+
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
