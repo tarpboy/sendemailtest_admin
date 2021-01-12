@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.woongjin.sendemailtest_admin.Adapter.AddrListAdapter;
+import com.woongjin.sendemailtest_admin.Popup.NoticePopup;
+import com.woongjin.sendemailtest_admin.Popup.OnEventOkListener;
 import com.woongjin.sendemailtest_admin.Popup.ProgressPopup;
 import com.woongjin.sendemailtest_admin.WebConnect.ApiGetContractHist;
 import com.woongjin.sendemailtest_admin.WebConnect.InterfaceAsyncResponse;
@@ -41,6 +44,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+import static com.woongjin.sendemailtest_admin.Define.mLastClickTime;
 
 public class Activity1 extends AppCompatActivity implements View.OnClickListener {
 
@@ -187,6 +191,7 @@ public class Activity1 extends AppCompatActivity implements View.OnClickListener
 
         // Create a new user with a first and last name
         db.collection("CT_TB_CONTRACT_HIST")
+                .whereEqualTo("USE_YN", "Y")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -269,12 +274,7 @@ public class Activity1 extends AppCompatActivity implements View.OnClickListener
                                                     Log.e("Jonathan", "arryContractList :: " +arryContractList.get(i));
                                                 }
 
-                                                mAdapter = new AddrListAdapter(mContext, arryContractList, new View.OnClickListener() {
-                                                    @Override
-                                                    public void onClick(View view) {
-
-                                                    }
-                                                });
+                                                mAdapter = new AddrListAdapter(mContext, arryContractList, itemClickListener);
                                                 addrList.setAdapter(mAdapter);
 
 
@@ -372,6 +372,93 @@ public class Activity1 extends AppCompatActivity implements View.OnClickListener
     }
 
 
+
+    // 작업목록 아이템 안의 버튼들의 클릭이벤트
+    AddrListAdapter.OnListItemClickListener itemClickListener = new AddrListAdapter.OnListItemClickListener() {
+        @Override
+        public void onListItemClickListener(int position, final View v) {
+
+//             두번클릭을 막기위해
+            if (SystemClock.elapsedRealtime() - mLastClickTime < 1500) {
+                return;
+            }
+            mLastClickTime = SystemClock.elapsedRealtime();
+
+
+            switch (v.getId()) {
+                case R.id.bt_delete:
+
+                    Log.e("Jonathan", "나왔음. ::: " + v.getTag());
+
+                    NoticePopup popup = new NoticePopup(mContext, "삭제하시겠습니까?", new OnEventOkListener() {
+                        @Override
+                        public void onOk() {
+                            // TODO Auto-generated method stub
+
+                            deleteData((int)v.getTag());
+
+
+                        }
+                    });
+                    popup.setCanceledOnTouchOutside(false);
+                    popup.show();
+
+
+                    break;
+
+            }
+        }
+    };
+
+    private void deleteData(int tag) {
+
+        final ProgressPopup dialog = new ProgressPopup(mContext);
+
+        if(!dialog.isShowing())
+        {
+            dialog.setMessage("로딩중...");
+            dialog.show();
+        }
+
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        HashMap<String, String> insertData = new HashMap<>();
+        insertData.put("USE_YN", "N");
+
+        // Add a new document with a generated ID
+        db.collection("CT_TB_CONTRACT_HIST").document(arryContractList.get(tag).get("SEQ"))
+                .set(insertData)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        dialog.dismiss();
+
+                        bt_search.performClick();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("Jonathan", "Error adding document", e);
+
+                        NoticePopup popup = new NoticePopup(mContext, "저장에 실패하였습니다.\n 다시 시도해 주세요.", new OnEventOkListener() {
+                            @Override
+                            public void onOk() {
+                                // TODO Auto-generated method stub
+
+                            }
+                        });
+                        popup.setCanceledOnTouchOutside(false);
+                        popup.show();
+
+                    }
+                });
+
+
+    }
+
+
     public void getContractHistWithName()
     {
         arryContractList.clear();
@@ -392,6 +479,7 @@ public class Activity1 extends AppCompatActivity implements View.OnClickListener
         // Create a new user with a first and last name
         db.collection("CT_TB_CONTRACT_HIST")
                 .whereEqualTo("NAME_PLACE", et_search_param.getText().toString())
+                .whereEqualTo("USE_YN", "Y")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -475,12 +563,7 @@ public class Activity1 extends AppCompatActivity implements View.OnClickListener
                                                     Log.e("Jonathan", "arryContractList :: " +arryContractList.get(i));
                                                 }
 
-                                                mAdapter = new AddrListAdapter(mContext, arryContractList, new View.OnClickListener() {
-                                                    @Override
-                                                    public void onClick(View view) {
-
-                                                    }
-                                                });
+                                                mAdapter = new AddrListAdapter(mContext, arryContractList, itemClickListener);
                                                 addrList.setAdapter(mAdapter);
 
 

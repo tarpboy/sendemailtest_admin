@@ -2,48 +2,73 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layAddrItem"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="100dp"
     android:paddingLeft="20dp"
+    android:paddingRight="20dp"
     android:paddingTop="8dp"
     android:paddingBottom="8dp"
     android:addStatesFromChildren="true"
     android:orientation="horizontal">
-    <LinearLayout
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:orientation="vertical"
-        android:layout_marginRight="18dp">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tv_contract_name"
+
+        <Button
+            android:id="@+id/bt_delete"
+            android:layout_width="20dp"
+            android:layout_height="23dp"
+            android:background="@drawable/btn_delete"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+
+
+
+        <LinearLayout
+            android:layout_toLeftOf="@id/bt_delete"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:text=""/>
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_marginRight="10dp">
 
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:text=""/>
+            <TextView
+                android:id="@+id/tv_contract_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text=""/>
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text=""/>
 
 
 
-        <TextView
-            android:id="@+id/tv_loc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:text=""/>
+            <TextView
+                android:id="@+id/tv_loc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text=""/>
 
-        <TextView
-            android:id="@+id/tv_from_to_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:text=""/>
+            <TextView
+                android:id="@+id/tv_from_to_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text=""/>
 
-    </LinearLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
 </LinearLayout>

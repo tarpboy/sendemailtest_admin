@@ -2,10 +2,12 @@ package com.woongjin.sendemailtest_admin.Adapter;
 
 import android.content.Context;
 import android.icu.text.DateFormat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -39,15 +41,19 @@ public class AddrListAdapter extends BaseAdapter implements View.OnClickListener
 
 
 
+    OnListItemClickListener listItemClickListener;
+
+
+
 
     public interface OnListItemClickListener {
         void onListItemClickListener(int position, View v);
     }
 
-    public AddrListAdapter(Context context, ArrayList<HashMap<String, String>> list, View.OnClickListener listener) {
+    public AddrListAdapter(Context context, ArrayList<HashMap<String, String>> list, OnListItemClickListener listener) {
         mContext = context;
         mItemList = list;
-        clickListener = listener;
+        listItemClickListener = listener;
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         selectPosition = -1;
 
@@ -72,7 +78,7 @@ public class AddrListAdapter extends BaseAdapter implements View.OnClickListener
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
 
         AddrItemHolder itemHolder;
 
@@ -85,6 +91,8 @@ public class AddrListAdapter extends BaseAdapter implements View.OnClickListener
             itemHolder.tv_name = (TextView) convertView.findViewById(R.id.tv_name);
             itemHolder.tv_loc = (TextView) convertView.findViewById(R.id.tv_loc);
             itemHolder.tv_from_to_date = (TextView) convertView.findViewById(R.id.tv_from_to_date);
+
+            itemHolder.bt_delete = (Button)convertView.findViewById(R.id.bt_delete);
 
 
             convertView.setTag(itemHolder);
@@ -112,6 +120,27 @@ public class AddrListAdapter extends BaseAdapter implements View.OnClickListener
         }
 
 
+        itemHolder.bt_delete.setTag(position);
+
+
+        itemHolder.bt_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Log.e("Jonathan", "click :: " + position);
+                int position = (int) (v.getTag());
+                listItemClickListener.onListItemClickListener(position, v);
+
+//                else if(v.getId() == R.id.ll_daily_item)
+//                {
+//                    int position = (int) (v.getTag());
+//                    listItemClickListener.onListItemClickListener(position, v);
+//                }
+
+            }
+        });
+
+
 
 
         return convertView;
@@ -125,8 +154,9 @@ public class AddrListAdapter extends BaseAdapter implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        notifyDataSetChanged();
-        clickListener.onClick(v);
+
+//        notifyDataSetChanged();
+//        clickListener.onClick(v);
     }
 
     public class AddrItemHolder {
@@ -134,6 +164,9 @@ public class AddrListAdapter extends BaseAdapter implements View.OnClickListener
         public TextView tv_name;
         public TextView tv_loc;
         public TextView tv_from_to_date;
+
+
+        public Button bt_delete;
 
 
         // 터치 레이아웃

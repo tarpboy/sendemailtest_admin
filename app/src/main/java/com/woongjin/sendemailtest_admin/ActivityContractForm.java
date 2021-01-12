@@ -523,6 +523,7 @@ public class ActivityContractForm extends AppCompatActivity {
 
         insertData.put("UPLD_DT", currentDateandTime);
         insertData.put("SEND_YN", "N");
+        insertData.put("USE_YN", "Y");
         insertData.put("SEQ", newDocRef);
 
         // Add a new document with a generated ID
